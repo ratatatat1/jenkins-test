@@ -1,0 +1,18 @@
+.scroll-table {
+  overflow: hidden;
+
+  .ant-spin-nested-loading, .ant-spin-container, .ant-table {
+    &, .ant-table-container {
+      height: 100%;
+    }
+
+    .ant-table-container {
+      display: flex;
+      flex-direction: column;
+
+      .ant-table-header {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
