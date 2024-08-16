@@ -76,7 +76,6 @@
     "strictFunctionTypes": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@ngiq/brainbrowser/*": ["./src/@ngiq/brainbrowser/*"]
     }
   },
   "include": [
