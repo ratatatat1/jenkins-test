@@ -87,7 +87,7 @@ export const Jigsaw = () => {
   useEffect(() => {
     if (list.length && startStamp && list.every((v, i) => v === i)) {
       setTimeout(() => {
-        alert(`你成功了，用时${Date.now() - startStamp!}秒`);
+        alert(`你成功了，用时${(Date.now() - startStamp!) / 1000}秒`);
         setStartStamp(0);
         setInitStamp(Date.now());
       }, 0);
