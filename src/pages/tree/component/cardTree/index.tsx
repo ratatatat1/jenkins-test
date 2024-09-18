@@ -6,6 +6,8 @@ import React, {
   useState,
 } from "react";
 import { CardItem, TreeType } from "../../type";
+import "./index.less";
+import classNames from "classnames";
 
 type Iprops = {
   Card: React.ComponentType<any>;
@@ -224,7 +226,10 @@ export const CardTree = (props: Iprops) => {
           <ChildLine list={layerInfo.parent.list} index={0} isParent={true} />
         </div>
       </div>
-      <div ref={peerRef} className="overflow-auto">
+      <div
+        ref={peerRef}
+        className={classNames("hidden-scroll-bar", "overflow-auto")}
+      >
         <div
           style={{
             width: layerInfo.peer.width,
@@ -249,7 +254,10 @@ export const CardTree = (props: Iprops) => {
           />
         </div>
       </div>
-      <div className="overflow-auto" ref={childrenRef}>
+      <div
+        className={classNames("overflow-auto", "hidden-scroll-bar")}
+        ref={childrenRef}
+      >
         <div
           style={{
             width: layerInfo.children.width,
