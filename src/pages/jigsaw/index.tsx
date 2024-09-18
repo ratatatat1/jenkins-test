@@ -111,3 +111,5 @@ export const Jigsaw = () => {
     </>
   );
 };
+
+export default Jigsaw;

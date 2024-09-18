@@ -1,6 +1,13 @@
 import React from "react";
-import { Jigsaw } from "./pages";
+import { Route, Routes } from "react-router-dom";
+import { routeMapList } from "./router";
 
 export default () => {
-  return <Jigsaw />;
+  return (
+    <Routes>
+      {routeMapList.map((v) => (
+        <Route {...v} key={v.path} />
+      ))}
+    </Routes>
+  );
 };

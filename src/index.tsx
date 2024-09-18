@@ -6,6 +6,7 @@ import "./assets/styles/antdCommon.less";
 import { ConfigProvider } from "antd";
 import zhCN from "antd/locale/zh_CN";
 import "dayjs/locale/zh-cn";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,6 +20,8 @@ root.render(
       },
     }}
   >
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ConfigProvider>
 );
