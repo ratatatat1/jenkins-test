@@ -1,12 +1,12 @@
 {
   "name": "jenkins-test",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development --BASE_PATH=./ vite --mode=dev --c vite.config.ts",
-    "build": "cross-env NODE_ENV=development BASE_PATH=./ vite build --mode=prod --c vite.config.ts"
+    "build": "cross-env NODE_ENV=production BASE_PATH=./ vite build --mode=prod --c vite.config.ts"
   },
   "keywords": [],
   "author": "",
