@@ -11,8 +11,10 @@ export const Card = (props: Iprops) => {
     <div
       style={{
         marginRight: isLast ? 0 : cardConfig.cardSpace,
+        width: `${cardConfig.width}px`,
+        height: `${cardConfig.height}px`,
       }}
-      className={`w-[${cardConfig.width}px] h-[${cardConfig.height}px] border text-center flex-shrink-0`}
+      className={`border text-center flex-shrink-0`}
     >
       {item.name}
     </div>

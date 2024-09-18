@@ -101,6 +101,7 @@ export const Jigsaw = () => {
   return (
     <>
       <div className="container">
+        version: 1.1.0
         <canvas
           onClick={handleMoveBlock}
           ref={canvasRef}
