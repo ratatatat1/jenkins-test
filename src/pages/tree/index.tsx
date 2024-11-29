@@ -14,14 +14,6 @@ export const Tree = () => {
     setParent([mockResult]);
     setPeer(mockResult.children ?? []);
     setChildren(mockResult.children?.find((v) => v.current)?.children ?? []);
-    console.log(111);
-    localStorage.setItem("bbb", "111");
-
-    return () => {
-      console.log(88888);
-      alert(8888);
-      localStorage.setItem("aaa", "111");
-    };
   }, []);
   return (
     <div>
