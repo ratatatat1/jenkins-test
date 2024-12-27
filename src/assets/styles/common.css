@@ -2,13 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-html, body, p {
+html,
+body,
+p {
   margin: 0;
   font-size: 14px;
 }
@@ -20,6 +23,10 @@ html, body, p {
   flex-direction: column;
 }
 
-*{
+canvas {
+  display: inline-block;
+}
+
+* {
   box-sizing: border-box;
 }

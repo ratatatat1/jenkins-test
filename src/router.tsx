@@ -3,6 +3,7 @@ import { Jigsaw } from "./pages/jigsaw";
 import { Tree } from "./pages/tree";
 import { JigsawVideo } from "./pages/video-play";
 import { MineSweeper } from "./pages/minesweeper";
+import { ColorFound } from "./pages/colorfound";
 
 export const routeMapList: RouteProps[] = [
   {
@@ -20,6 +21,10 @@ export const routeMapList: RouteProps[] = [
   {
     path: "mine-sweeper",
     Component: MineSweeper,
+  },
+  {
+    path: "color-found",
+    Component: ColorFound,
   },
   {
     path: "*",
