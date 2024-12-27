@@ -35,6 +35,7 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    host: "0.0.0.0",
     proxy: {
       "/dc": {
         // target: 'http://192.168.11.251:8080/dc',
