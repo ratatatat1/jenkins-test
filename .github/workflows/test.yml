@@ -25,7 +25,7 @@ jobs:
       - name: Deploy 🚀 # 部署
         uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages # 使用标准的 gh-pages 分支
           folder: dist # 这里填打包好的目录名称
           clean: true # 清理目标分支
