@@ -100,3 +100,7 @@ export const flatObj = (obj: CommonObj, pre = '', visited = new WeakSet<object>(
 
   return res;
 };
+
+const add = () => {
+  return a + 1;
+}
