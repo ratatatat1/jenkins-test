@@ -31,15 +31,18 @@ export const getCanvasHeight = (line: number) => {
 };
 
 export const getClickMineIndex = (offsetX: number, offsetY: number) => {
+  // Fixed: Correct coordinate calculation
+  // offsetX corresponds to column (j), offsetY corresponds to row (i)
+  const col = Math.floor(offsetX / (GRID_WIDTH + GRID_SPACE));
+  const row = Math.floor(offsetY / (GRID_WIDTH + GRID_SPACE));
+  
   console.log(
-    offsetX,
-    GRID_SPACE + GRID_SPACE,
-    offsetY,
-    offsetX / (GRID_WIDTH + GRID_SPACE),
-    offsetY / (GRID_WIDTH + GRID_SPACE)
+    'Click coordinates:',
+    'offsetX:', offsetX,
+    'offsetY:', offsetY,
+    'calculated row:', row,
+    'calculated col:', col
   );
-  return [
-    (offsetX / (GRID_WIDTH + GRID_SPACE)) | 0,
-    (offsetY / (GRID_WIDTH + GRID_SPACE)) | 0,
-  ];
+  
+  return [row, col];
 };

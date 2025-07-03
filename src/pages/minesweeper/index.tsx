@@ -38,19 +38,34 @@ export const MineSweeper = () => {
   /** 初始化地雷 */
   const initMine = () => {
     const list: [number, number][] = [];
-    let has_mine = false;
+    // Ensure at least one mine is placed to prevent infinite recursion
+    const totalCells = line[0] * line[1];
+    const minMines = Math.max(1, Math.floor(totalCells * 0.05)); // At least 5% mines
+    const maxMines = Math.floor(totalCells * 0.2); // At most 20% mines
+    
     for (let i = 0; i < line[0]; i++) {
       for (let j = 0; j < line[1]; j++) {
         if (Math.random() < 0.1) {
           list.push([i, j]);
-          has_mine = true;
         }
       }
     }
-    if (!has_mine) {
-      initMine();
-      return
+    
+    // If no mines or too few mines, add some randomly
+    while (list.length < minMines) {
+      const randomRow = Math.floor(Math.random() * line[0]);
+      const randomCol = Math.floor(Math.random() * line[1]);
+      const exists = list.some(([r, c]) => r === randomRow && c === randomCol);
+      if (!exists) {
+        list.push([randomRow, randomCol]);
+      }
     }
+    
+    // If too many mines, remove some
+    while (list.length > maxMines) {
+      list.pop();
+    }
+    
     setMines(list);
   };
 
@@ -58,7 +73,7 @@ export const MineSweeper = () => {
     e: React.MouseEvent<HTMLCanvasElement, MouseEvent>
   ) => {
     const { offsetX, offsetY } = e.nativeEvent;
-    const click_line = getClickMineIndex(offsetY, offsetX);
+    const click_line = getClickMineIndex(offsetX, offsetY);
     const render_list = updateBoard(click_line);
     const unopen_count = render_list.reduce((pre, cur) => {
       
